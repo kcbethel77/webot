@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<!--Map 형태로 서버에 설정된 값 불러오기 가능-->
+<defaultsMap>
+    <entry>
+        <key>splash_message_caps</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>splash_message</key>
+        <value>Welcome to my awesome app!</value>
+    </entry>
+</defaultsMap>

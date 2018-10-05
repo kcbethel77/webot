@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Theme colors-->
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#3f7fe9</color>
+    <!--Basic colors-->
+    <color name="ic_launcher">#3f7fe9</color>
+    <color name="bg_message_board">#fafafa</color>
+    <color name="colorBlack">#000000</color>
+</resources>
