@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.lldong0.webot.login.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -44,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                             Toast.makeText(SplashActivity.this, "Fetch Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
-                        displayWelcomeMessage(); // welcome message 설정 가
+                        displayWelcomeMessage();
                     }
                 });
 
@@ -52,7 +53,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     // splash 화면에서 welcome message 설정 함수
-    // 확인차 작성
     private void displayWelcomeMessage() {
         boolean caps = mFirebaseRemoteConfig.getBoolean("splash_message_caps");
         String msg = mFirebaseRemoteConfig.getString("splash_message");

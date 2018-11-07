@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.lldong0.webot.ChatActivity"
+    tools:context="com.example.lldong0.webot.chat.ChatActivity"
     tools:showIn="@layout/activity_chat">
 
     <RelativeLayout
@@ -20,7 +20,10 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:paddingBottom="50dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"/>
 
     </RelativeLayout>
 
@@ -28,21 +31,22 @@
         android:id="@+id/layout_message_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        tools:ignore="UnknownId">
+        android:layout_alignParentBottom="true">
 
         <RelativeLayout
+            android:id="@+id/insert_layout"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@+id/addText"
+            android:layout_marginStart="5dp"
             android:background="@drawable/bg_btn_oval"
             android:elevation="2dp">
 
             <ImageView
-                android:id="@+id/btn_record"
+                android:id="@+id/insert_note_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerInParent="true"
@@ -53,14 +57,11 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/addText"
-            android:layout_width="280dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_toStartOf="@+id/addBtn"
+            android:layout_toEndOf="@id/insert_layout"
+            android:layout_toStartOf="@id/btn_send_layout"
+            android:layout_centerInParent="true"
             android:background="@drawable/bg_input_message"
             android:elevation="2dp">
 
@@ -70,20 +71,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
-                android:background="#fff"
+                android:background="@null"
                 android:hint="메시지를 입력해주세요."
                 android:minHeight="50dp"
                 android:textSize="18sp" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/addBtn"
+            android:id="@+id/btn_send_layout"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
             android:background="@drawable/bg_btn_oval"
             android:elevation="4dp">
 

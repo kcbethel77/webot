@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.twolee.chatbot.login.SignUpActivity">
+    android:padding="20dp"
+    tools:context="com.example.lldong0.webot.login.SignUpActivity">
 
-    <ImageView
-        android:layout_width="57dp"
-        android:layout_height="47dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_login_logo" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_login_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/godom"
+            android:text="지금 바로 위봇을 만나보세요! "
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="15sp"
-        android:text="지금 바로 위봇을 만나보세요! " />
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="72dp"
-        android:text="Email" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email" />
 
-    <EditText
-        android:id="@+id/edit_text_sign_email"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/edit_text_sign_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        android:text="Passward" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passward" />
 
-    <EditText
-        android:id="@+id/edit_text_sign_pw"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/edit_text_sign_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_sign"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/bg_user_message_box"
+        android:fontFamily="@font/godom"
         android:text="회원가입"
         android:textColor="@color/colorPrimary"
         android:textSize="15sp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/sign_in"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/godom"
+        android:text="로그인하러 가기"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/sign_in"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="155dp"
-            android:layout_marginTop="40dp"
-            android:clickable="true"
-            android:text="로그인하러 가기"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
-
-    </LinearLayout>
 
 </LinearLayout>

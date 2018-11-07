@@ -14,5 +14,11 @@
         <item name="android:windowBackground">@drawable/backgroud_splash</item>
     </style>
 
+    <!--tool bar icon color theme.-->
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@android:color/black</item>
+    </style>
+
+
 
 </resources>

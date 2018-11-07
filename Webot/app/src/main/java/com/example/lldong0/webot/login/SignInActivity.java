@@ -1,16 +1,18 @@
-package com.example.lldong0.webot;
+package com.example.lldong0.webot.login;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.lldong0.webot.MainActivity;
+import com.example.lldong0.webot.R;
+import com.example.lldong0.webot.chat.ChatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,15 +21,16 @@ import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SignInActivity extends AppCompatActivity {
-    protected @BindView(R.id.edit_text_pw)
+    @BindView(R.id.edit_text_pw)
     EditText etPw;
-    protected @BindView(R.id.edit_text_email)
+    @BindView(R.id.edit_text_email)
     EditText etEmail;
-    protected @BindView(R.id.sign_up)
+    @BindView(R.id.sign_up)
     TextView tvSignUp;
-    protected @BindView(R.id.btn_login)
+    @BindView(R.id.btn_login)
     Button btnLogin;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -36,25 +39,10 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         ButterKnife.bind(this);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
-
-        tvSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginEvent();
-            }
-        });
 
         // login interface listener
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -75,15 +63,25 @@ public class SignInActivity extends AppCompatActivity {
         };
     }
 
+    @OnClick(R.id.sign_up)
+    public void signUp() {
+        startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+    }
+
+    @OnClick(R.id.btn_login)
+    public void buttonLogin() {
+        loginEvent();
+    }
+
     public void loginEvent() {
         firebaseAuth.signInWithEmailAndPassword(etEmail.getText().toString(), etPw.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 // 로그인 판단
                 if (!task.isSuccessful()) {
-                    Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     Log.d("sign", "Sign In Fail");
                 } else {
+                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
                     Log.d("sign", "Sign In Success");
                 }
             }

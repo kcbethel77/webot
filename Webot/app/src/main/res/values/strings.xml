@@ -1,4 +1,25 @@
 <resources>
-    <string name="app_name">Webot</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="app_name">webot</string>
+    <!--로그인-->
+    <string name="loginMessage">지금 바로 위봇을 만나보세요! </string>
+    <string name="id">Email</string>
+    <string name="password">Password</string>
+    <string name="newLogin">회원가입</string>
+    <string name="gotoLogin">로그인하러 가기</string>
+    <!--추가 사항-->
+    <string name="input_message">메시지를 입력해주세요.</string>
+    <string name="mainToolbar">WE Bot.</string>
+    <string name="home">홈</string>
+    <string name="content">심리노트</string>
+    <string name="message">상담받기</string>
+    <string name="more">더보기</string>
+    <!-- home fragment-->
+    <string name="startConsult">상담 시작</string>
+    <string name="writeReview">리뷰 작성</string>
+    <string name="counselingLetter">위봇으로 심리 상담을 받아 보세요.</string>
+    <string name="gotoCounselor">지금 바로 위봇을 만나러 가보세요.</string>
+    <string name="okButton">확인</string>
+    <!-- note fragment-->
+    <string name="empty_task">완료할 과제가 없습니다. \n 상담을 받아보세요.</string>
+
 </resources>
